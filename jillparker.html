@@ -1,0 +1,63 @@
+<!-- 
+
+MATT'S NOTES FOR CREATING THE 3D FILE AND PUBLISHING
+
+**CREATING GLB**
+1. CREATE RING/PIECE IN BLENDER
+2. SET THE MATERIALS - SELECT THE DIAMOND BUTTON FOR DIAMONDS AND MAKE THE METALS BASIC REFLECTIVE METAL MATERIALS
+3. EXPORT THE GLB OF THE RING AND DRAG INTO https://dev-sandbox.pixotronics.com/webgi/0.8.0/demos/core~editor.html
+3. SET UP SCENE HOW YOU LIKE IT
+4. CLICK THE DOWNLOAD BUTTON FOR THE SCENE AND GET THE NEW GLB FILE
+5. UPLOAD THE NEW GLB FILE TO THE ASSETS FOLDER HERE IN GLITCH
+6. GRAB THE URL OF THE NEW GLB FILE
+
+**MAKING NEW 3D RENDER LIVE**
+1. DUPLICATE THE HTML FILE
+2. RENAME THE FILE TO WHAT YOU WANT
+3. REPLACE THE SRC WITH THE URL OF YOUR UPDATED GLB
+4. NEW 3D RENDER SHOULD BE VIEWABLE AT https://hegemanandco.glitch.me/NAME_OF_HTML_FILE.html
+
+-->
+
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      font-family: "Inter", sans-serif !important;
+      margin: 0;
+    }
+  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="https://cdn.glitch.global/71ce20c5-807d-4242-aa0f-5c545493a450/Hegeman_favicon.png?v=1691072796456"
+    />
+    <title>3D Custom Render</title>
+    <script src="https://dist.pixotronics.com/webgi/runtime/viewer-0.8.0.js"></script>
+  </head>
+
+  <body>
+    <!-- REPLACE THE SRC WITH THE LINK TO YOUR GLB FILE -->
+    <webgi-viewer
+      id="viewer-3d"
+      src="https://cdn.glitch.global/71ce20c5-807d-4242-aa0f-5c545493a450/jillparker_webgi.glb?v=1702670076642"
+      style="
+        width: 100%;
+        height: 100vh;
+        z-index: 1;
+        display: block;
+        margin: 0;
+        padding: 0;
+      "
+    />
+    <style>
+      margin: 0;
+    </style>
+  </body>
+</html>

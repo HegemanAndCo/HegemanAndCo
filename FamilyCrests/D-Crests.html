@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Family Crest Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+        body {
+            font-family: 'Libre Baskerville', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+h2 {
+        size: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .search-bar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            width: 300px;
+            max-width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .gallery-item {
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .gallery-item p {
+            margin: 5px 0 0;
+            display: inline-block;
+        }
+
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .fullscreen img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .fullscreen .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+      .back-button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .back-button:hover {
+        background-color: #ddd;
+      }
+    </style>
+</head>
+<body>
+  <a class="back-button" onclick="history.back()">Back</a>
+<h1>Family Crest Gallery</h1>
+  <h2>Letter D</h2>
+<div class="search-bar">
+    <input type="text" id="searchInput" onkeyup="filterGallery()" placeholder="Search for names..">
+</div>
+
+<div class="gallery" id="gallery">
+   
+    
+  <div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DADDARIO%20(2).JPG" alt="DADDARIO (2)"> <p>DADDARIO (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DADDARIO.JPG" alt="DADDARIO"> <p>DADDARIO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAGENAIS.JPG" alt="DAGENAIS"> <p>DAGENAIS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAGGETT.JPG" alt="DAGGETT"> <p>DAGGETT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAISY.JPG" alt="DAISY"> <p>DAISY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DALY.JPG" alt="DALY"> <p>DALY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/D'AMELIO.JPG" alt="D'AMELIO"> <p>D'AMELIO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAMICO.JPG" alt="DAMICO"> <p>DAMICO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DANA.JPG" alt="DANA"> <p>DANA</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DANIELS.JPG" alt="DANIELS"> <p>DANIELS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DANKWARDT.JPG" alt="DANKWARDT"> <p>DANKWARDT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DARAKJIAN.JPG" alt="DARAKJIAN"> <p>DARAKJIAN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DARBY.JPG" alt="DARBY"> <p>DARBY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DARDEN.JPG" alt="DARDEN"> <p>DARDEN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DASTOT.JPG" alt="DASTOT"> <p>DASTOT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAUCH.JPG" alt="DAUCH"> <p>DAUCH</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAUGHARTY.JPG" alt="DAUGHARTY"> <p>DAUGHARTY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAUGHERTY.JPG" alt="DAUGHERTY"> <p>DAUGHERTY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAVELUY.JPG" alt="DAVELUY"> <p>DAVELUY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAVEY.JPG" alt="DAVEY"> <p>DAVEY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAVIAU.JPG" alt="DAVIAU"> <p>DAVIAU</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAVIDSON%20(2).JPG" alt="DAVIDSON (2)"> <p>DAVIDSON (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAVIDSON.JPG" alt="DAVIDSON"> <p>DAVIDSON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAVIES.JPG" alt="DAVIES"> <p>DAVIES</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAVIO.JPG" alt="DAVIO"> <p>DAVIO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAVIS%20(2).JPG" alt="DAVIS (2)"> <p>DAVIS (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAVIS%20(3).JPG" alt="DAVIS (3)"> <p>DAVIS (3)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAVIS.JPG" alt="DAVIS"> <p>DAVIS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAW.JPG" alt="DAW"> <p>DAW</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAWSON%20(2).JPG" alt="DAWSON (2)"> <p>DAWSON (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAWSON.JPG" alt="DAWSON"> <p>DAWSON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAY%20(2).JPG" alt="DAY (2)"> <p>DAY (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DAY.JPG" alt="DAY"> <p>DAY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20ASCASUBI.JPG" alt="DE ASCASUBI"> <p>DE ASCASUBI</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20BERNARDO.JPG" alt="DE BERNARDO"> <p>DE BERNARDO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20BOLT%20(2).JPG" alt="DE BOLT (2)"> <p>DE BOLT (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20BOLT.JPG" alt="DE BOLT"> <p>DE BOLT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20CAPRIO.JPG" alt="DE CAPRIO"> <p>DE CAPRIO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20COSTER.JPG" alt="DE COSTER"> <p>DE COSTER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20FORD.JPG" alt="DE FORD"> <p>DE FORD</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20HONDT.JPG" alt="DE HONDT"> <p>DE HONDT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20KORP.JPG" alt="DE KORP"> <p>DE KORP</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20LA%20GRAVE.JPG" alt="DE LA GRAVE"> <p>DE LA GRAVE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20LA%20MOTA.JPG" alt="DE LA MOTA"> <p>DE LA MOTA</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20LORENZO.JPG" alt="DE LORENZO"> <p>DE LORENZO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20PEW.JPG" alt="DE PEW"> <p>DE PEW</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20ROSE.JPG" alt="DE ROSE"> <p>DE ROSE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20SANTOLO.JPG" alt="DE SANTOLO"> <p>DE SANTOLO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20SIMONE.JPG" alt="DE SIMONE"> <p>DE SIMONE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20SOTO.JPG" alt="DE SOTO"> <p>DE SOTO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20TURO.JPG" alt="DE TURO"> <p>DE TURO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DE%20VLAEMINCK.JPG" alt="DE VLAEMINCK"> <p>DE VLAEMINCK</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEAN%20(2).JPG" alt="DEAN (2)"> <p>DEAN (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEAN.JPG" alt="DEAN"> <p>DEAN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEARDEN.JPG" alt="DEARDEN"> <p>DEARDEN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEARTH%20(2).JPG" alt="DEARTH (2)"> <p>DEARTH (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEARTH.JPG" alt="DEARTH"> <p>DEARTH</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DECLAIRE.JPG" alt="DECLAIRE"> <p>DECLAIRE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEDOW.JPG" alt="DEDOW"> <p>DEDOW</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEFMARCHAIS.JPG" alt="DEFMARCHAIS"> <p>DEFMARCHAIS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEGUIRE.JPG" alt="DEGUIRE"> <p>DEGUIRE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEINES.JPG" alt="DEINES"> <p>DEINES</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEKKER.JPG" alt="DEKKER"> <p>DEKKER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DELANCEY.JPG" alt="DELANCEY"> <p>DELANCEY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DELANEY%20(2).JPG" alt="DELANEY (2)"> <p>DELANEY (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DELANEY.JPG" alt="DELANEY"> <p>DELANEY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DELETE.JPG" alt="DELETE"> <p>DELETE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DELK.JPG" alt="DELK"> <p>DELK</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DELONGUE.JPG" alt="DELONGUE"> <p>DELONGUE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEMONT.JPG" alt="DEMONT"> <p>DEMONT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DENEAU.JPG" alt="DENEAU"> <p>DENEAU</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DENHAM.JPG" alt="DENHAM"> <p>DENHAM</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DENNIS.JPG" alt="DENNIS"> <p>DENNIS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DENNY.JPG" alt="DENNY"> <p>DENNY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DENT.JPG" alt="DENT"> <p>DENT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DENZINGER.JPG" alt="DENZINGER"> <p>DENZINGER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEPAOLIS.JPG" alt="DEPAOLIS"> <p>DEPAOLIS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEREZ.JPG" alt="DEREZ"> <p>DEREZ</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DESMARCHAIS.JPG" alt="DESMARCHAIS"> <p>DESMARCHAIS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DESMOND.JPG" alt="DESMOND"> <p>DESMOND</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DESROCHES.JPG" alt="DESROCHES"> <p>DESROCHES</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DESROSIERS.JPG" alt="DESROSIERS"> <p>DESROSIERS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DETTENMEIER.JPG" alt="DETTENMEIER"> <p>DETTENMEIER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DETTWILER.JPG" alt="DETTWILER"> <p>DETTWILER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEUBER.JPG" alt="DEUBER"> <p>DEUBER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEVINE%20(2).JPG" alt="DEVINE (2)"> <p>DEVINE (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEVINE.JPG" alt="DEVINE"> <p>DEVINE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEXTER.JPG" alt="DEXTER"> <p>DEXTER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEYO%20(2).JPG" alt="DEYO (2)"> <p>DEYO (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEYO.JPG" alt="DEYO"> <p>DEYO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DEZAINDE.JPG" alt="DEZAINDE"> <p>DEZAINDE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DI%20BELLA.JPG" alt="DI BELLA"> <p>DI BELLA</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DI%20DONNA.JPG" alt="DI DONNA"> <p>DI DONNA</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DI%20MAGGIO.JPG" alt="DI MAGGIO"> <p>DI MAGGIO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DIAZ%20(2).JPG" alt="DIAZ (2)"> <p>DIAZ (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DIAZ%20(3).JPG" alt="DIAZ (3)"> <p>DIAZ (3)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DIAZ%20(4).JPG" alt="DIAZ (4)"> <p>DIAZ (4)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DIAZ.JPG" alt="DIAZ"> <p>DIAZ</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DICKENS%20(2).JPG" alt="DICKENS (2)"> <p>DICKENS (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DICKENS.JPG" alt="DICKENS"> <p>DICKENS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DICKSON.JPG" alt="DICKSON"> <p>DICKSON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DIETRICH.JPG" alt="DIETRICH"> <p>DIETRICH</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DIFILIPPO.JPG" alt="DIFILIPPO"> <p>DIFILIPPO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DILEONARDO.JPG" alt="DILEONARDO"> <p>DILEONARDO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DILLON%20(2).JPG" alt="DILLON (2)"> <p>DILLON (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DILLON.JPG" alt="DILLON"> <p>DILLON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DIMMITT.JPG" alt="DIMMITT"> <p>DIMMITT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DIMPFEL.JPG" alt="DIMPFEL"> <p>DIMPFEL</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DIMPSEL.JPG" alt="DIMPSEL"> <p>DIMPSEL</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DINGWALL.JPG" alt="DINGWALL"> <p>DINGWALL</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DINKLER.JPG" alt="DINKLER"> <p>DINKLER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DINTELMAN.JPG" alt="DINTELMAN"> <p>DINTELMAN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DION.JPG" alt="DION"> <p>DION</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DISTEFANO.JPG" alt="DISTEFANO"> <p>DISTEFANO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DISTEL.JPG" alt="DISTEL"> <p>DISTEL</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DIXON.JPG" alt="DIXON"> <p>DIXON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DLUGOSH.JPG" alt="DLUGOSH"> <p>DLUGOSH</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DMYTROWICK.JPG" alt="DMYTROWICK"> <p>DMYTROWICK</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOBIE.JPG" alt="DOBIE"> <p>DOBIE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOBLANKO.JPG" alt="DOBLANKO"> <p>DOBLANKO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOBSON.JPG" alt="DOBSON"> <p>DOBSON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOCKENDORFF.JPG" alt="DOCKENDORFF"> <p>DOCKENDORFF</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DODD.JPG" alt="DODD"> <p>DODD</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DODGE.JPG" alt="DODGE"> <p>DODGE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOHERTY.JPG" alt="DOHERTY"> <p>DOHERTY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOLPHIN.JPG" alt="DOLPHIN"> <p>DOLPHIN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOMBROWSKI.JPG" alt="DOMBROWSKI"> <p>DOMBROWSKI</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOMEC.JPG" alt="DOMEC"> <p>DOMEC</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOMINO.JPG" alt="DOMINO"> <p>DOMINO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DONALDSON%20(2).JPG" alt="DONALDSON (2)"> <p>DONALDSON (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DONALDSON.JPG" alt="DONALDSON"> <p>DONALDSON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DONNELLY.JPG" alt="DONNELLY"> <p>DONNELLY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DONOHUE.JPG" alt="DONOHUE"> <p>DONOHUE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOOLAN.JPG" alt="DOOLAN"> <p>DOOLAN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DORN.JPG" alt="DORN"> <p>DORN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOTY.JPG" alt="DOTY"> <p>DOTY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOUCET.JPG" alt="DOUCET"> <p>DOUCET</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOUCETTE.JPG" alt="DOUCETTE"> <p>DOUCETTE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOUGHERTY%20(2).JPG" alt="DOUGHERTY (2)"> <p>DOUGHERTY (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOUGHERTY.JPG" alt="DOUGHERTY"> <p>DOUGHERTY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOUGLAS.JPG" alt="DOUGLAS"> <p>DOUGLAS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOUTHET.JPG" alt="DOUTHET"> <p>DOUTHET</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOUTHIT%20(2).JPG" alt="DOUTHIT (2)"> <p>DOUTHIT (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOUTHIT.JPG" alt="DOUTHIT"> <p>DOUTHIT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOWIE.JPG" alt="DOWIE"> <p>DOWIE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOWNING.JPG" alt="DOWNING"> <p>DOWNING</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOYLE%20(2).JPG" alt="DOYLE (2)"> <p>DOYLE (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DOYLE.JPG" alt="DOYLE"> <p>DOYLE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DRAKE.JPG" alt="DRAKE"> <p>DRAKE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DRALLE.JPG" alt="DRALLE"> <p>DRALLE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DRESDEN.JPG" alt="DRESDEN"> <p>DRESDEN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DROLET.JPG" alt="DROLET"> <p>DROLET</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DRON.JPG" alt="DRON"> <p>DRON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DROUIN.JPG" alt="DROUIN"> <p>DROUIN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DRYDEN.JPG" alt="DRYDEN"> <p>DRYDEN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUBOIS.JPG" alt="DUBOIS"> <p>DUBOIS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUBREUIL.JPG" alt="DUBREUIL"> <p>DUBREUIL</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUCKETT.JPG" alt="DUCKETT"> <p>DUCKETT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUFAULT.JPG" alt="DUFAULT"> <p>DUFAULT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUFFORD.JPG" alt="DUFFORD"> <p>DUFFORD</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUFFY.JPG" alt="DUFFY"> <p>DUFFY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUFOUR%20(2).JPG" alt="DUFOUR (2)"> <p>DUFOUR (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUFOUR.JPG" alt="DUFOUR"> <p>DUFOUR</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUGAN.JPG" alt="DUGAN"> <p>DUGAN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUGHI.JPG" alt="DUGHI"> <p>DUGHI</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUKES.JPG" alt="DUKES"> <p>DUKES</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUNBAR.JPG" alt="DUNBAR"> <p>DUNBAR</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUNCAN%20(2).JPG" alt="DUNCAN (2)"> <p>DUNCAN (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUNCAN.JPG" alt="DUNCAN"> <p>DUNCAN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUNHAM.JPG" alt="DUNHAM"> <p>DUNHAM</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUNMORE%20(2).JPG" alt="DUNMORE (2)"> <p>DUNMORE (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUNMORE.JPG" alt="DUNMORE"> <p>DUNMORE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUNN.JPG" alt="DUNN"> <p>DUNN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUNNE%20(2).JPG" alt="DUNNE (2)"> <p>DUNNE (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUNNE.JPG" alt="DUNNE"> <p>DUNNE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUPIN.JPG" alt="DUPIN"> <p>DUPIN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUPIS.JPG" alt="DUPIS"> <p>DUPIS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUPONT.JPG" alt="DUPONT"> <p>DUPONT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUPRE%20(2).JPG" alt="DUPRE (2)"> <p>DUPRE (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUPRE.JPG" alt="DUPRE"> <p>DUPRE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUPRE.JPG" alt="DUPRE"> <p>DUPRE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUQUE.JPG" alt="DUQUE"> <p>DUQUE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUQUE.JPG" alt="DUQUE"> <p>DUQUE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DURDEN.JPG" alt="DURDEN"> <p>DURDEN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DURDEN.JPG" alt="DURDEN"> <p>DURDEN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DURKEE.JPG" alt="DURKEE"> <p>DURKEE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DURKEE.JPG" alt="DURKEE"> <p>DURKEE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUROCHER.JPG" alt="DUROCHER"> <p>DUROCHER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUROCHER.JPG" alt="DUROCHER"> <p>DUROCHER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUSE.JPG" alt="DUSE"> <p>DUSE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUSE.JPG" alt="DUSE"> <p>DUSE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUSSOM.JPG" alt="DUSSOM"> <p>DUSSOM</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUSSOM.JPG" alt="DUSSOM"> <p>DUSSOM</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUSTAN.JPG" alt="DUSTAN"> <p>DUSTAN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DUSTAN.JPG" alt="DUSTAN"> <p>DUSTAN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DVORAK.JPG" alt="DVORAK"> <p>DVORAK</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DWIGHT.JPG" alt="DWIGHT"> <p>DWIGHT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DWIGHT.JPG" alt="DWIGHT"> <p>DWIGHT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DWYER.JPG" alt="DWYER"> <p>DWYER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/DWYER.JPG" alt="DWYER"> <p>DWYER</p> </div>
+
+  
+  
+  
+  
+   
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const lazyLoadImages = document.querySelectorAll('.gallery-item img[data-src]');
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.getAttribute('data-src');
+                    img.removeAttribute('data-src');
+                    observer.unobserve(img);
+                }
+            });
+        });
+        lazyLoadImages.forEach(img => {
+            observer.observe(img);
+        });
+    });
+
+    function filterGallery() {
+        let input, filter, gallery, items, p, i, txtValue;
+        input = document.getElementById('searchInput');
+        filter = input.value.toUpperCase();
+        gallery = document.getElementById("gallery");
+        items = gallery.getElementsByClassName('gallery-item');
+
+        for (i = 0; i < items.length; i++) {
+            p = items[i].getElementsByTagName("p")[0];
+            txtValue = p.textContent || p.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                items[i].style.display = "";
+            } else {
+                items[i].style.display = "none";
+            }
+        }
+    }
+
+    // Fullscreen functionality
+    document.querySelectorAll('.gallery-item img').forEach(item => {
+        item.addEventListener('click', event => {
+            const src = event.target.src;
+            const fullscreen = document.createElement('div');
+            fullscreen.classList.add('fullscreen');
+            fullscreen.innerHTML = `<img src="${src}" alt="${event.target.alt}"><span class="close">&times;</span>`;
+            document.body.appendChild(fullscreen);
+            fullscreen.querySelector('.close').addEventListener('click', () => {
+                fullscreen.remove();
+            });
+            fullscreen.addEventListener('click', (e) => {
+                if (e.target === fullscreen) {
+                    fullscreen.remove();
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

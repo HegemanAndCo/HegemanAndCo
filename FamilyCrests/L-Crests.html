@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Family Crest Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+        body {
+            font-family: 'Libre Baskerville', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+h2 {
+        size: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .search-bar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            width: 300px;
+            max-width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .gallery-item {
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .gallery-item p {
+            margin: 5px 0 0;
+            display: inline-block;
+        }
+
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .fullscreen img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .fullscreen .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+      .back-button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .back-button:hover {
+        background-color: #ddd;
+      }
+    </style>
+</head>
+<body>
+  <a class="back-button" onclick="history.back()">Back</a>
+<h1>Family Crest Gallery</h1>
+  <h2>Letter L</h2>
+<div class="search-bar">
+    <input type="text" id="searchInput" onkeyup="filterGallery()" placeholder="Search for names..">
+</div>
+
+<div class="gallery" id="gallery">
+    
+   
+  <div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LA%20BELLA.JPG" alt="LA BELLA"> <p>LA BELLA</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LA%20FONT.JPG" alt="LA FONT"> <p>LA FONT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LA%20FONTAINE.JPG" alt="LA FONTAINE"> <p>LA FONTAINE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LA%20QUINO.JPG" alt="LA QUINO"> <p>LA QUINO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LABADOT.JPG" alt="LABADOT"> <p>LABADOT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LABERGE.JPG" alt="LABERGE"> <p>LABERGE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LABROSSE.JPG" alt="LABROSSE"> <p>LABROSSE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LABUHN.JPG" alt="LABUHN"> <p>LABUHN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LACOMBE.JPG" alt="LACOMBE"> <p>LACOMBE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LACROIX.JPG" alt="LACROIX"> <p>LACROIX</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LACY.JPG" alt="LACY"> <p>LACY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LADE.JPG" alt="LADE"> <p>LADE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAFF.JPG" alt="LAFF"> <p>LAFF</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAFFOON.JPG" alt="LAFFOON"> <p>LAFFOON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAHAIE.JPG" alt="LAHAIE"> <p>LAHAIE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAJEUNESSE.JPG" alt="LAJEUNESSE"> <p>LAJEUNESSE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAJOIE.JPG" alt="LAJOIE"> <p>LAJOIE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LALONDE.JPG" alt="LALONDE"> <p>LALONDE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAMAR.JPG" alt="LAMAR"> <p>LAMAR</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAMARCHE.JPG" alt="LAMARCHE"> <p>LAMARCHE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAMBERT.JPG" alt="LAMBERT"> <p>LAMBERT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAMONTAGNE.JPG" alt="LAMONTAGNE"> <p>LAMONTAGNE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LANBERG.JPG" alt="LANBERG"> <p>LANBERG</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LANCASTER%20(2).JPG" alt="LANCASTER (2)"> <p>LANCASTER (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LANCASTER%20(3).JPG" alt="LANCASTER (3)"> <p>LANCASTER (3)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LANCASTER%20(4).JPG" alt="LANCASTER (4)"> <p>LANCASTER (4)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LANCASTER.JPG" alt="LANCASTER"> <p>LANCASTER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LANDRY.JPG" alt="LANDRY"> <p>LANDRY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LANE%20(2).JPG" alt="LANE (2)"> <p>LANE (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LANE%20(3).JPG" alt="LANE (3)"> <p>LANE (3)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LANE.JPG" alt="LANE"> <p>LANE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LANGBERG.JPG" alt="LANGBERG"> <p>LANGBERG</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LANGGUTH.JPG" alt="LANGGUTH"> <p>LANGGUTH</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LANGLOIS.JPG" alt="LANGLOIS"> <p>LANGLOIS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LANNIN.JPG" alt="LANNIN"> <p>LANNIN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LANSING.JPG" alt="LANSING"> <p>LANSING</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LARIVEE.JPG" alt="LARIVEE"> <p>LARIVEE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAST.JPG" alt="LAST"> <p>LAST</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LATIMER.JPG" alt="LATIMER"> <p>LATIMER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LATINA.JPG" alt="LATINA"> <p>LATINA</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LATOUR.JPG" alt="LATOUR"> <p>LATOUR</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAUGHTON.JPG" alt="LAUGHTON"> <p>LAUGHTON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAUNDRY.JPG" alt="LAUNDRY"> <p>LAUNDRY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAUNIKONIS.JPG" alt="LAUNIKONIS"> <p>LAUNIKONIS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAURIN.JPG" alt="LAURIN"> <p>LAURIN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAUZON.JPG" alt="LAUZON"> <p>LAUZON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAVALLEE.JPG" alt="LAVALLEE"> <p>LAVALLEE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAVIN.JPG" alt="LAVIN"> <p>LAVIN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAVOIE.JPG" alt="LAVOIE"> <p>LAVOIE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAWLOR.JPG" alt="LAWLOR"> <p>LAWLOR</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAWNICZAK.JPG" alt="LAWNICZAK"> <p>LAWNICZAK</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAWRENCE.JPG" alt="LAWRENCE"> <p>LAWRENCE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LAYLE.JPG" alt="LAYLE"> <p>LAYLE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LE%20ROY.JPG" alt="LE ROY"> <p>LE ROY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEAR.JPG" alt="LEAR"> <p>LEAR</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEASK%20(2).JPG" alt="LEASK (2)"> <p>LEASK (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEASK.JPG" alt="LEASK"> <p>LEASK</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEBLANC.JPG" alt="LEBLANC"> <p>LEBLANC</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEBRETON.JPG" alt="LEBRETON"> <p>LEBRETON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LECCESE.JPG" alt="LECCESE"> <p>LECCESE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LECLERC.JPG" alt="LECLERC"> <p>LECLERC</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEDBETTER.JPG" alt="LEDBETTER"> <p>LEDBETTER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEE%20(2).JPG" alt="LEE (2)"> <p>LEE (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEE%20(3).JPG" alt="LEE (3)"> <p>LEE (3)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEE.JPG" alt="LEE"> <p>LEE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEFEBVRE.JPG" alt="LEFEBVRE"> <p>LEFEBVRE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEFELHOCZ.JPG" alt="LEFELHOCZ"> <p>LEFELHOCZ</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEGAULT.JPG" alt="LEGAULT"> <p>LEGAULT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEHMAN.JPG" alt="LEHMAN"> <p>LEHMAN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEHNER.JPG" alt="LEHNER"> <p>LEHNER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEIDY.JPG" alt="LEIDY"> <p>LEIDY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEMIEUX.JPG" alt="LEMIEUX"> <p>LEMIEUX</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEMMONS.JPG" alt="LEMMONS"> <p>LEMMONS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEONARD.JPG" alt="LEONARD"> <p>LEONARD</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEONE.JPG" alt="LEONE"> <p>LEONE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEPORE%20(2).JPG" alt="LEPORE (2)"> <p>LEPORE (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEPORE.JPG" alt="LEPORE"> <p>LEPORE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/L'ESPERANCE.JPG" alt="L'ESPERANCE"> <p>L'ESPERANCE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LESTER.JPG" alt="LESTER"> <p>LESTER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEVESQUE.JPG" alt="LEVESQUE"> <p>LEVESQUE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEWIS%20(2).JPG" alt="LEWIS (2)"> <p>LEWIS (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEWIS%20(3).JPG" alt="LEWIS (3)"> <p>LEWIS (3)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LEWIS.JPG" alt="LEWIS"> <p>LEWIS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/L'HEUREUX.JPG" alt="L'HEUREUX"> <p>L'HEUREUX</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LIDDELL.JPG" alt="LIDDELL"> <p>LIDDELL</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LIGGINS.JPG" alt="LIGGINS"> <p>LIGGINS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LIGON.JPG" alt="LIGON"> <p>LIGON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LIND.JPG" alt="LIND"> <p>LIND</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LINDGREN.JPG" alt="LINDGREN"> <p>LINDGREN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LINDSEY.JPG" alt="LINDSEY"> <p>LINDSEY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LIPINSKI.JPG" alt="LIPINSKI"> <p>LIPINSKI</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LISI.JPG" alt="LISI"> <p>LISI</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LITSCHAUER.JPG" alt="LITSCHAUER"> <p>LITSCHAUER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LITTLE%20JOHN.JPG" alt="LITTLE JOHN"> <p>LITTLE JOHN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LLOYD%20(2).JPG" alt="LLOYD (2)"> <p>LLOYD (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LLOYD.JPG" alt="LLOYD"> <p>LLOYD</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LOHR.JPG" alt="LOHR"> <p>LOHR</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LOMAS.JPG" alt="LOMAS"> <p>LOMAS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LONDON.JPG" alt="LONDON"> <p>LONDON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LONEY.JPG" alt="LONEY"> <p>LONEY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LOPEZ.JPG" alt="LOPEZ"> <p>LOPEZ</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LORANGER.JPG" alt="LORANGER"> <p>LORANGER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LORTIE.JPG" alt="LORTIE"> <p>LORTIE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LOSCHMANN.JPG" alt="LOSCHMANN"> <p>LOSCHMANN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LOUNSBURY.JPG" alt="LOUNSBURY"> <p>LOUNSBURY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LOVE%20JOY.JPG" alt="LOVE JOY"> <p>LOVE JOY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LOVE.JPG" alt="LOVE"> <p>LOVE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LOVEDAY.JPG" alt="LOVEDAY"> <p>LOVEDAY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LOW.JPG" alt="LOW"> <p>LOW</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LOWE.JPG" alt="LOWE"> <p>LOWE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LOWER.JPG" alt="LOWER"> <p>LOWER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LOWRY.JPG" alt="LOWRY"> <p>LOWRY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LUCCISANO.JPG" alt="LUCCISANO"> <p>LUCCISANO</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LUCIA.JPG" alt="LUCIA"> <p>LUCIA</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LUCIERE.JPG" alt="LUCIERE"> <p>LUCIERE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LUERA.JPG" alt="LUERA"> <p>LUERA</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LUGER.JPG" alt="LUGER"> <p>LUGER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LUMSDEN.JPG" alt="LUMSDEN"> <p>LUMSDEN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LUNDY.JPG" alt="LUNDY"> <p>LUNDY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LUNN.JPG" alt="LUNN"> <p>LUNN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LUSSIER.JPG" alt="LUSSIER"> <p>LUSSIER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LYNCH.JPG" alt="LYNCH"> <p>LYNCH</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LYONS.JPG" alt="LYONS"> <p>LYONS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LYSAKOVSKI.JPG" alt="LYSAKOVSKI"> <p>LYSAKOVSKI</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LYTTLE.JPG" alt="LYTTLE"> <p>LYTTLE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/LYVER.JPG" alt="LYVER"> <p>LYVER</p> </div>
+
+  
+  
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const lazyLoadImages = document.querySelectorAll('.gallery-item img[data-src]');
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.getAttribute('data-src');
+                    img.removeAttribute('data-src');
+                    observer.unobserve(img);
+                }
+            });
+        });
+        lazyLoadImages.forEach(img => {
+            observer.observe(img);
+        });
+    });
+
+    function filterGallery() {
+        let input, filter, gallery, items, p, i, txtValue;
+        input = document.getElementById('searchInput');
+        filter = input.value.toUpperCase();
+        gallery = document.getElementById("gallery");
+        items = gallery.getElementsByClassName('gallery-item');
+
+        for (i = 0; i < items.length; i++) {
+            p = items[i].getElementsByTagName("p")[0];
+            txtValue = p.textContent || p.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                items[i].style.display = "";
+            } else {
+                items[i].style.display = "none";
+            }
+        }
+    }
+
+    // Fullscreen functionality
+    document.querySelectorAll('.gallery-item img').forEach(item => {
+        item.addEventListener('click', event => {
+            const src = event.target.src;
+            const fullscreen = document.createElement('div');
+            fullscreen.classList.add('fullscreen');
+            fullscreen.innerHTML = `<img src="${src}" alt="${event.target.alt}"><span class="close">&times;</span>`;
+            document.body.appendChild(fullscreen);
+            fullscreen.querySelector('.close').addEventListener('click', () => {
+                fullscreen.remove();
+            });
+            fullscreen.addEventListener('click', (e) => {
+                if (e.target === fullscreen) {
+                    fullscreen.remove();
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

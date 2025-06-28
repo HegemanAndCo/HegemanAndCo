@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Family Crest Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+        body {
+            font-family: 'Libre Baskerville', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+h2 {
+        size: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .search-bar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            width: 300px;
+            max-width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .gallery-item {
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .gallery-item p {
+            margin: 5px 0 0;
+            display: inline-block;
+        }
+
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .fullscreen img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .fullscreen .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+      .back-button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .back-button:hover {
+        background-color: #ddd;
+      }
+    </style>
+</head>
+<body>
+  <a class="back-button" onclick="history.back()">Back</a>
+<h1>Family Crest Gallery</h1>
+  <h2>Letter N</h2>
+<div class="search-bar">
+    <input type="text" id="searchInput" onkeyup="filterGallery()" placeholder="Search for names..">
+</div>
+
+<div class="gallery" id="gallery">
+  
+    
+  <div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NADEAU.JPG" alt="NADEAU"> <p>NADEAU</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NADON.JPG" alt="NADON"> <p>NADON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NANCARROW.JPG" alt="NANCARROW"> <p>NANCARROW</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NAPIER.JPG" alt="NAPIER"> <p>NAPIER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NASS.JPG" alt="NASS"> <p>NASS</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NATALI.JPG" alt="NATALI"> <p>NATALI</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NAUGLE.JPG" alt="NAUGLE"> <p>NAUGLE</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NEEDHAM.JPG" alt="NEEDHAM"> <p>NEEDHAM</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NEILL.JPG" alt="NEILL"> <p>NEILL</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NELLIGAN.JPG" alt="NELLIGAN"> <p>NELLIGAN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NELSON%20(2).JPG" alt="NELSON (2)"> <p>NELSON (2)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NELSON.JPG" alt="NELSON"> <p>NELSON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NESTIER.JPG" alt="NESTIER"> <p>NESTIER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NESTLER.JPG" alt="NESTLER"> <p>NESTLER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NEUFELD.JPG" alt="NEUFELD"> <p>NEUFELD</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NEUHART.JPG" alt="NEUHART"> <p>NEUHART</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NEWBY.JPG" alt="NEWBY"> <p>NEWBY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NEWELL.JPG" alt="NEWELL"> <p>NEWELL</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NEWTON.JPG" alt="NEWTON"> <p>NEWTON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NICHOL.JPG" alt="NICHOL"> <p>NICHOL</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NICKLIN.JPG" alt="NICKLIN"> <p>NICKLIN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NIEDERQUELL.JPG" alt="NIEDERQUELL"> <p>NIEDERQUELL</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NIESLEY.JPG" alt="NIESLEY"> <p>NIESLEY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NILSON.JPG" alt="NILSON"> <p>NILSON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NIXON.JPG" alt="NIXON"> <p>NIXON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NOEL%20(3).JPG" alt="NOEL (3)"> <p>NOEL (3)</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NOEL.JPG" alt="NOEL"> <p>NOEL</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NOELL.JPG" alt="NOELL"> <p>NOELL</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NORDLANDER.JPG" alt="NORDLANDER"> <p>NORDLANDER</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NORMANDIN.JPG" alt="NORMANDIN"> <p>NORMANDIN</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NORRGARD.JPG" alt="NORRGARD"> <p>NORRGARD</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NORTON.JPG" alt="NORTON"> <p>NORTON</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NOSEWORTHY.JPG" alt="NOSEWORTHY"> <p>NOSEWORTHY</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NOSKA.JPG" alt="NOSKA"> <p>NOSKA</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NUNEZ.JPG" alt="NUNEZ"> <p>NUNEZ</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NUTAKOR.JPG" alt="NUTAKOR"> <p>NUTAKOR</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NUTT.JPG" alt="NUTT"> <p>NUTT</p> </div>
+<div class="gallery-item"> <img data-src="https://cdn.glitch.global/90de4622-8de0-497d-8443-e7b1257ceaa1/NUTTALL.JPG" alt="NUTTALL"> <p>NUTTALL</p> </div>
+
+  
+  
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const lazyLoadImages = document.querySelectorAll('.gallery-item img[data-src]');
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.getAttribute('data-src');
+                    img.removeAttribute('data-src');
+                    observer.unobserve(img);
+                }
+            });
+        });
+        lazyLoadImages.forEach(img => {
+            observer.observe(img);
+        });
+    });
+
+    function filterGallery() {
+        let input, filter, gallery, items, p, i, txtValue;
+        input = document.getElementById('searchInput');
+        filter = input.value.toUpperCase();
+        gallery = document.getElementById("gallery");
+        items = gallery.getElementsByClassName('gallery-item');
+
+        for (i = 0; i < items.length; i++) {
+            p = items[i].getElementsByTagName("p")[0];
+            txtValue = p.textContent || p.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                items[i].style.display = "";
+            } else {
+                items[i].style.display = "none";
+            }
+        }
+    }
+
+    // Fullscreen functionality
+    document.querySelectorAll('.gallery-item img').forEach(item => {
+        item.addEventListener('click', event => {
+            const src = event.target.src;
+            const fullscreen = document.createElement('div');
+            fullscreen.classList.add('fullscreen');
+            fullscreen.innerHTML = `<img src="${src}" alt="${event.target.alt}"><span class="close">&times;</span>`;
+            document.body.appendChild(fullscreen);
+            fullscreen.querySelector('.close').addEventListener('click', () => {
+                fullscreen.remove();
+            });
+            fullscreen.addEventListener('click', (e) => {
+                if (e.target === fullscreen) {
+                    fullscreen.remove();
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

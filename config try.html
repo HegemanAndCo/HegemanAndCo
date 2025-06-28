@@ -1,0 +1,77 @@
+
+
+
+<html>
+  <json>
+const config = await viewer.addPlugin(VariationConfiguratorPlugin);
+await config.importPath("https://configtry2.s3.us-east-2.amazonaws.com/objects/config.json");
+
+const category = config.variations.objects[0]
+config.applyVariation(category , 0 , 'objects' );
+</json>
+  <style>
+    body {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      font-family: "Inter", sans-serif !important;
+      margin: 0; 
+    }
+     </style>
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="https://cdn.glitch.global/71ce20c5-807d-4242-aa0f-5c545493a450/Hegeman_favicon.png?v=1691072796456"
+    />
+    <title>3D Custom Render</title>
+    <script src="https://dist.pixotronics.com/webgi/runtime/viewer-0.8.0.js"></script>
+  </head>
+
+  <body>
+    
+    <div id="canvasContainer">
+  <canvas id="mcanvas"></canvas>
+  <div id="ui">
+    <div>
+      <span>Head</span>
+      <button class="object" data-category="Basket" data-index="0" >Sphere</button>
+      <button class="object" data-category="Basket" data-index="1" >Diamond</button>
+    </div>
+    <div>
+      <span>Ring Shape</span>
+      <button class="object" data-category="Ring" data-index="0" >Flat</button>
+      <button class="object" data-category="Ring" data-index="1" >Round</button>
+    </div>
+    <div>
+      <span>Metal</span>
+      <button class="material" data-category="Metal" data-index="0" >rose</button>
+      <button class="material" data-category="Metal" data-index="1" >white</button>
+    </div>
+  </div>
+</div>
+    
+  
+    <!-- REPLACE THE SRC WITH THE LINK TO YOUR GLB FILE -->
+    <webgi-viewer
+                  
+      id="viewer-3d"
+      src="https://configtry2.s3.us-east-2.amazonaws.com/objects/config.json"
+      style="
+        width: 50%;
+        height: 50vh;
+        z-index: 1;
+        display: block;
+        margin: 0;
+        padding: 0;
+      "             
+    />
+    <style>
+      margin: 0;
+    </style>
+  </body>
+</html>
+
