@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "version": 4.6,
+    "type": "DiamondMaterial",
+    "generator": "DiamondMaterial.toJSON"
+  },
+  "name": "Star Sapphire",
+  "uuid": "d4678648-a30d-4751-a0d3-34c9983fc554",
+  "color": 16776444,
+  "envMapIntensity": 1.05,
+  "envMapIndex": 0,
+  "envMapRotationOffset": 2.37,
+  "dispersion": 0.1,
+  "squashFactor": 0.98,
+  "geometryFactor": 0.5,
+  "gammaFactor": 1.1300000000000001,
+  "absorptionFactor": 9.44,
+  "reflectivity": 1.04,
+  "refractiveIndex": 1.5299999999999998,
+  "rayBounces": 11,
+  "diamondOrientedEnvMap": 0,
+  "boostFactors": {
+    "x": 0.892,
+    "y": 0.892,
+    "z": 0.98595025,
+    "isVector3": true
+  },
+  "transmission": 0,
+  "isDiamondMaterialParameters": true,
+  "type": "DiamondMaterial",
+  "userData": {
+    "separateEnvMapIntensity": true,
+    "_baseMaterial": "c28e04e1-9c20-49aa-8b46-076eb6bbf41f",
+    "uuid": "d4678648-a30d-4751-a0d3-34c9983fc554"
+  }
+}
