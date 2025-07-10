@@ -1,58 +1,120 @@
-<!doctype html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>3D Custom Interactive Model</title><meta name="viewport" content="width=device-width,user-scalable=no,minimum-scale=1,maximum-scale=1"><link rel="icon" href="https://cdn.glitch.global/71ce20c5-807d-4242-aa0f-5c545493a450/Hegeman_favicon.png?v=1691072796456"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"><link href="https://cdn.jsdelivr.net/gh/repalash/gilroy-free-webfont@master/Gilroy-Extrabold.css" rel="stylesheet"><style>::-webkit-scrollbar
-    {
-      width: 8px;  /* for vertical scrollbars */
-      height: 8px; /* for horizontal scrollbars */
-    }
-    ::-webkit-scrollbar-track
-    {
-      background: rgba(64, 64, 64, 0.4);
-      border-radius: 6px;
-    }
-    ::-webkit-scrollbar-thumb
-    {
-      background: rgba(128, 128, 128, 0.2);
-      border-radius: 6px;
-    }
-    ::-webkit-scrollbar-corner {background: rgba(0,0,0,0.5);}</style><style>body {
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      /*background-color: blue;*/
-      /*background-color: black;*/
-      background-color: white;
-      font-family: 'Inter', sans-serif !important;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLB Model Viewer</title>
+    <link rel="icon" type="image/png" href="https://rawcdn.githack.com/HegemanAndCo/HegemanAndCo/main/ASSETS/Hegeman_favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet" />
 
-    #mcanvas {
-      width: 100%;
-      height: 100%;
-      max-width: 100%;
-      max-height: 100%;
-      /*touch-action: none;*/
-      z-index: -1;
-      /*pointer-events: none; // dont */
-    }
-    #canvasContainer{
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      top: 0;
-      z-index: 5;
-    }
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 
-    .font-inter {
-      font-family: 'Inter', sans-serif !important;
-    }
+    <style>
+        body {
+            font-family: "Libre Baskerville", serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column; /* Use column to stack title and viewer */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 20px; /* Add some padding */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+        h1 {
+            color: #000000;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        model-viewer {
+            width: 90%; /* Adjust width for responsiveness */
+            max-width: 800px; /* Max width for larger screens */
+            height: 60vh; /* Use viewport height for responsiveness */
+            max-height: 600px; /* Max height for larger screens */
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+            --poster-color: #cccccc; /* Background color before model loads */
+            margin-top: 20px; /* Space between title and viewer */
+        }
+        /* Optional: Add a simple loader */
+        .progress-bar {
+            display: block;
+            width: 100%;
+            height: 4px;
+            background-color: #e0e0e0;
+        }
+        .update-bar {
+            background-color: #333333;
+            width: 0%;
+            height: 100%;
+            transition: width 0.1s;
+        }
+        .progress-bar.hide {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+    </style>
+</head>
+<body>
 
-    .font-gilroy {
-      font-family: 'Gilroy', sans-serif !important;
-    }</style><script defer="defer" src="https://hegemanandco.glitch.me/Viewer/runtime.d96eebae.js"></script><script defer="defer" src="https://hegemanandco.glitch.me/Viewer/three.js-bundle.1474d82c.js"></script><script defer="defer" src="https://hegemanandco.glitch.me/Viewer/425.c7ae1d63.js"></script><script defer="defer" src="https://hegemanandco.glitch.me/Viewer/774.c21e8f2e.js"></script><script defer="defer" src="https://hegemanandco.glitch.me/Viewer/671.b3a59ef8.js"></script><script defer="defer" src="https://hegemanandco.glitch.me/Viewer/412.f70c5bfd.js"></script><script defer="defer" src="https://hegemanandco.glitch.me/Viewer/coreviewer.3763f14d.js"></script></head><body><div id="canvasContainer"><canvas id="mcanvas"></canvas></div></body><script>let listener = function (e) {
-    if (e.key === '\\') {
-            e.preventDefault();
-            (function () {var script = document.createElement('script');script.onload = function () {var stats = new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop () {stats.update();requestAnimationFrame(loop)});};script.src = '//mrdoob.github.io/stats.js/build/stats.min.js';document.head.appendChild(script);})();
-    }
-    document.removeEventListener('keypress', listener);
-}
-document.addEventListener('keypress', listener);</script></html>
+    <h1 id="modelTitle">Loading 3D Model...</h1>
+
+    <model-viewer
+        id="modelViewer"
+        src="" alt="A 3D model"
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        camera-controls
+        shadow-intensity="1"
+        autoplay
+        exposure="1.5"
+        environment-image="neutral"
+        bounds="tight"
+        loading="eager"
+        interaction-prompt="auto"
+        max-camera-orbit="auto"
+        min-camera-orbit="auto"
+        field-of-view="auto"
+        animation-name="0" >
+        <div class="progress-bar hide" slot="progress-bar">
+            <div class="update-bar"></div>
+        </div>
+    </model-viewer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modelViewer = document.getElementById('modelViewer');
+            const modelTitle = document.getElementById('modelTitle');
+            const urlParams = new URLSearchParams(window.location.search);
+            const modelUrl = urlParams.get('m'); // Get the 'm' parameter from the URL
+
+            if (modelUrl) {
+                modelViewer.src = modelUrl; // Set the model's source
+                // Attempt to make a more readable title from the URL
+                const fileName = modelUrl.substring(modelUrl.lastIndexOf('/') + 1).replace('.glb', '').replace(/%20/g, ' ').replace(/_/g, ' ');
+                modelTitle.textContent = `Viewing: ${fileName}`;
+            } else {
+                modelTitle.textContent = "No 3D Model Specified.";
+                // Optionally hide the model-viewer or display an error message
+                modelViewer.style.display = 'none';
+            }
+
+            // Optional: Progress bar logic
+            modelViewer.addEventListener('progress', (event) => {
+                const progressBar = modelViewer.querySelector('.progress-bar');
+                const updateBar = modelViewer.querySelector('.update-bar');
+                if (event.detail.totalProgress === 100) {
+                    progressBar.classList.add('hide');
+                } else {
+                    progressBar.classList.remove('hide');
+                    updateBar.style.width = event.detail.totalProgress + '%';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
