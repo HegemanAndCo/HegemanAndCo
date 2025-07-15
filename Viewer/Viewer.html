@@ -14,32 +14,43 @@
             font-family: "Libre Baskerville", serif;
             margin: 0;
             display: flex;
-            flex-direction: column; /* Use column to stack title and viewer */
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            /* Default styles for pages WITHOUT a title (your existing behavior) */
+            min-height: 100vh; /* Keep original for pages without explicit title */
             background-color: #f5f5f5;
             text-align: center;
-            padding: 20px; /* Add some padding */
-            box-sizing: border-box; /* Include padding in element's total width and height */
+            padding: 20px;
+            box-sizing: border-box;
         }
+
+        /* Styles specifically for pages WITH a title (for Framer embedding) */
+        body.has-title {
+            height: 100%; /* Important for Framer embedding */
+            position: absolute; /* Important for Framer embedding */
+            top: 0; /* Important for Framer embedding */
+            left: 0; /* Important for Framer embedding */
+            width: 100%; /* Important for Framer embedding */
+            overflow: hidden; /* Important for Framer embedding */
+        }
+
         h1 {
             color: #000000;
             font-size: 30px;
             margin-bottom: 20px;
         }
         model-viewer {
-            width: 90%; /* Adjust width for responsiveness */
-            max-width: 800px; /* Max width for larger screens */
-            height: 60vh; /* Use viewport height for responsiveness */
-            max-height: 600px; /* Max height for larger screens */
+            width: 90%;
+            max-width: 800px;
+            height: 60vh;
+            max-height: 600px;
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-            --poster-color: #cccccc; /* Background color before model loads */
-            margin-top: 20px; /* Space between title and viewer */
+            --poster-color: #cccccc;
+            margin-top: 20px;
         }
-        /* Optional: Add a simple loader */
         .progress-bar {
             display: block;
             width: 100%;
@@ -89,20 +100,29 @@
             const modelViewer = document.getElementById('modelViewer');
             const modelTitle = document.getElementById('modelTitle');
             const urlParams = new URLSearchParams(window.location.search);
-            const modelUrl = urlParams.get('m'); // Get the 'm' parameter from the URL
+            const modelUrl = urlParams.get('m');
+            const showTitle = urlParams.get('title'); // Get the 'title' parameter
 
             if (modelUrl) {
-                modelViewer.src = modelUrl; // Set the model's source
-                // Attempt to make a more readable title from the URL
-                const fileName = modelUrl.substring(modelUrl.lastIndexOf('/') + 1).replace('.glb', '').replace(/%20/g, ' ').replace(/_/g, ' ');
-                modelTitle.textContent = `Viewing: ${fileName}`;
+                modelViewer.src = modelUrl;
+
+                if (showTitle === 'true') {
+                    // Only show title and apply Framer centering if 'title=true' is present
+                    document.body.classList.add('has-title'); // Add class to body for specific CSS
+                    const fileName = modelUrl.substring(modelUrl.lastIndexOf('/') + 1).replace('.glb', '').replace(/%20/g, ' ').replace(/_/g, ' ');
+                    modelTitle.textContent = fileName; // No "Viewing: " prefix
+                } else {
+                    // Hide the title for pages where title=true is NOT present
+                    modelTitle.style.display = 'none';
+                    // The body will retain its default min-height: 100vh; etc.
+                }
+
             } else {
                 modelTitle.textContent = "No 3D Model Specified.";
-                // Optionally hide the model-viewer or display an error message
                 modelViewer.style.display = 'none';
             }
 
-            // Optional: Progress bar logic
+            // Optional: Progress bar logic (remains unchanged)
             modelViewer.addEventListener('progress', (event) => {
                 const progressBar = modelViewer.querySelector('.progress-bar');
                 const updateBar = modelViewer.querySelector('.update-bar');
