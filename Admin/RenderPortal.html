@@ -90,7 +90,9 @@
 
             const nameInput = document.getElementById('nameInput');
             const name = nameInput.value.toLowerCase().replace(/\s+/g, '');
-            const redirectURL = `https://hegemanandco.github.io/HegemanAndCo/${name}.html`;
+            // cache-buster (?v=timestamp) forces the browser to fetch the latest
+            // page every visit, so newly added render buttons always show up
+            const redirectURL = `https://hegemanandco.github.io/HegemanAndCo/${name}.html?v=${Date.now()}`;
 
             window.location.href = redirectURL;
         }
