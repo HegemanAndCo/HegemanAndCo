@@ -2,11 +2,12 @@
 (function(){
   var ENDPOINT='https://formsubmit.co/ajax/mcorio@robertcorio.com';
   var slug=(location.pathname.split('/').pop()||'page');
-  var KEY='hegeman-choice-'+slug;
+  var KEY='hegeman-choices-'+slug;
   function customer(){return (document.title||'').replace(/'s Renders$/,'').trim()||'Customer';}
   function starLabel(s){var b=s.parentNode&&s.parentNode.querySelector('.generated-button');return b?b.textContent.trim():'';}
   function stars(){return [].slice.call(document.querySelectorAll('.rp-star'));}
-  function apply(chosen){stars().forEach(function(s){s.classList.toggle('on',chosen!==''&&starLabel(s)===chosen);});}
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]');}catch(e){return [];}}
+  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a));}catch(e){}}
   var toast;
   function showToast(msg,ok){
     if(!toast){toast=document.createElement('div');
@@ -24,16 +25,17 @@
       .then(function(){showToast('✓ Choice sent — thank you!',true);})
       .catch(function(){showToast('Couldn’t send — please contact us directly.',false);});
   }
-  var saved=null;try{saved=localStorage.getItem(KEY);}catch(e){}
-  if(saved!==null)apply(saved);
+  var chosen=load();
+  stars().forEach(function(s){if(chosen.indexOf(starLabel(s))>-1)s.classList.add('on');});
   stars().forEach(function(s){
     s.style.cursor='pointer';s.setAttribute('role','button');s.setAttribute('tabindex','0');s.setAttribute('aria-label','Choose this version');
     function toggle(){
-      var wasOn=s.classList.contains('on');
-      var chosen=wasOn?'':starLabel(s);
-      apply(chosen);
-      try{localStorage.setItem(KEY,chosen);}catch(e){}
-      if(chosen!==''){notify(chosen);}else{showToast('Selection cleared',true);}
+      var lbl=starLabel(s);
+      var nowOn=!s.classList.contains('on');
+      s.classList.toggle('on',nowOn);
+      var arr=load();var i=arr.indexOf(lbl);
+      if(nowOn){if(i<0)arr.push(lbl);save(arr);notify(lbl);}
+      else{if(i>-1)arr.splice(i,1);save(arr);showToast('Selection cleared',true);}
     }
     s.addEventListener('click',toggle);
     s.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
