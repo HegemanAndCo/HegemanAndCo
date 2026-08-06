@@ -1,0 +1,45 @@
+name: Deploy Pages (exclude ASSETS)
+
+# Publishes the site to GitHub Pages WITHOUT the huge ASSETS/ folder.
+# ASSETS/ .glb models are served to render pages by githack (rawcdn.githack.com),
+# which reads the git repo directly, so they don't need to be in the Pages site.
+# Dropping ASSETS/ takes the deploy from ~3.4 GB to ~50 MB, so it no longer times out.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Remove ASSETS from the Pages copy (kept in git, served by githack)
+        run: rm -rf ASSETS
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact (everything except ASSETS)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
