@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Orbit Ring — Hegeman & Co.</title>
+<link rel="icon" type="image/png" href="https://rawcdn.githack.com/HegemanAndCo/HegemanAndCo/main/ASSETS/Hegeman_favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{font-family:'Source Sans 3',system-ui,sans-serif;background:#fff;color:#2b2620;line-height:1.6}
+.serif{font-family:'Libre Baskerville',Georgia,serif}
+header{padding:16px 5vw;border-bottom:1px solid #eee7dc;display:flex;justify-content:space-between;align-items:baseline}
+header .wm{font-family:'Libre Baskerville',serif;font-size:18px;letter-spacing:.04em;color:#2b2620;text-decoration:none}
+header a.back{color:#8b7d6b;text-decoration:none;font-size:14px}
+header a.back:hover{color:#2b2620}
+.wrap{max-width:1080px;margin:0 auto;padding:5vh 5vw;display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:start}
+@media(max-width:860px){.wrap{grid-template-columns:1fr;gap:28px;padding-top:3vh}}
+.hero img{width:100%;display:block;border-radius:6px;aspect-ratio:1/1;object-fit:cover}
+.thumbs{display:flex;gap:8px;margin-top:8px}
+.thumbs img{width:64px;height:64px;object-fit:cover;border-radius:4px;cursor:pointer;opacity:.65;border:1px solid #eee7dc}
+.thumbs img.on{opacity:1;border-color:#2b2620}
+.tag{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8b7d6b;margin-bottom:10px}
+h1{font-family:'Libre Baskerville',serif;font-weight:400;font-size:34px;margin-bottom:4px}
+.lede{font-size:16.5px;color:#4c443a;margin:16px 0 4px}
+.price{font-size:24px;font-family:'Libre Baskerville',serif;margin:18px 0 2px}
+.price .big{display:none}
+.price.large .big{display:inline} .price.large .std{display:none}
+.pnote{font-size:13px;color:#8b7d6b;height:18px}
+label{display:block;font-size:14px;font-weight:600;margin:18px 0 6px}
+select{width:100%;font-family:inherit;font-size:16px;padding:12px 14px;border:1px solid #d9cfc0;border-radius:6px;background:#fff;color:#2b2620}
+select:focus{outline:2px solid #3f7d4e;border-color:#3f7d4e}
+.metals{display:flex;gap:8px;flex-wrap:wrap}
+.metals button{font-family:inherit;font-size:14px;padding:10px 16px;border-radius:6px;border:1px solid #d9cfc0;background:#fff;cursor:pointer;color:#2b2620}
+.metals button.on{border-color:#2b2620;background:#2b2620;color:#fff}
+.cart{display:block;width:100%;text-align:center;background:#3f7d4e;color:#fff;text-decoration:none;padding:16px;border-radius:6px;font-size:17px;font-weight:600;margin-top:22px;transition:background .15s}
+.cart:hover{background:#356a42}
+.fit{font-size:14px;color:#4c443a;background:#f6f2ea;border-radius:6px;padding:12px 16px;margin-top:14px}
+.details{margin-top:30px;border-top:1px solid #eee7dc}
+.details div{display:flex;justify-content:space-between;gap:18px;padding:11px 0;border-bottom:1px solid #eee7dc;font-size:14.5px}
+.details dt{color:#8b7d6b;white-space:nowrap}
+.details dd{text-align:right}
+footer{text-align:center;padding:36px 20px 44px;color:#8b7d6b;font-size:14px;border-top:1px solid #eee7dc;margin-top:6vh}
+footer a{color:#3f7d4e}
+</style></head><body>
+<header><a class="wm" href="https://build.hegemanandco.com">Hegeman &amp; Co.</a><a class="back" href="https://build.hegemanandco.com/gallery.html">Gallery</a></header>
+<div class="wrap">
+ <div>
+  <div class="hero"><img id="hero" src="https://rawcdn.githack.com/HegemanAndCo/HegemanAndCo/main/trr-gallery/orbit-hand1.jpg" alt="The Orbit Ring in 18k yellow gold, worn on hand"></div>
+  <div class="thumbs">
+    <img src="https://rawcdn.githack.com/HegemanAndCo/HegemanAndCo/main/trr-gallery/orbit-hand1.jpg" class="on" onclick="pick(this)" alt="Worn on hand">
+    <img src="https://rawcdn.githack.com/HegemanAndCo/HegemanAndCo/main/trr-gallery/orbit-hand2.jpg" onclick="pick(this)" alt="Worn on hand, above">
+    <img src="https://rawcdn.githack.com/HegemanAndCo/HegemanAndCo/main/trr-gallery/orbit-gold.jpg" onclick="pick(this)" alt="18k yellow gold">
+    <img src="https://rawcdn.githack.com/HegemanAndCo/HegemanAndCo/main/trr-gallery/orbit-rose.jpg" onclick="pick(this)" alt="18k rose gold">
+    <img src="https://rawcdn.githack.com/HegemanAndCo/HegemanAndCo/main/trr-gallery/orbit-silver.jpg" onclick="pick(this)" alt="Platinum">
+  </div>
+ </div>
+ <div>
+  <div class="tag">Our best seller</div>
+  <h1>The Orbit Ring</h1>
+  <p class="lede">Three diamonds circle a slim, crossing band — the ring people come in asking for. It works as an engagement ring, but most of our customers wear it every day. Low profile, so it doesn't snag. Light, so you forget it's on.</p>
+  <div class="price"><span class="std">$2,750</span><span class="big">$2,900</span></div>
+  <div class="pnote" id="pnote">&nbsp;</div>
+  <label>Metal</label>
+  <div class="metals">
+    <button class="on" onclick="metal(this,'https://rawcdn.githack.com/HegemanAndCo/HegemanAndCo/main/trr-gallery/orbit-gold.jpg')">18k Yellow Gold</button>
+    <button onclick="metal(this,'https://rawcdn.githack.com/HegemanAndCo/HegemanAndCo/main/trr-gallery/orbit-rose.jpg')">18k Rose Gold</button>
+    <button onclick="metal(this,'https://rawcdn.githack.com/HegemanAndCo/HegemanAndCo/main/trr-gallery/orbit-silver.jpg')">Platinum</button>
+  </div>
+  <label for="size">Ring Size</label>
+  <select id="size" onchange="sizeChange(this)"><option value="">Select your ring size</option><option value="idk">I don't know yet</option><option value="3.5">3.5</option><option value="3.75">3.75</option><option value="4">4</option><option value="4.25">4.25</option><option value="4.5">4.5</option><option value="4.75">4.75</option><option value="5">5</option><option value="5.25">5.25</option><option value="5.5">5.5</option><option value="5.75">5.75</option><option value="6">6</option><option value="6.25">6.25</option><option value="6.5">6.5</option><option value="6.75">6.75</option><option value="7">7</option><option value="7.25">7.25</option><option value="7.5">7.5</option><option value="7.75">7.75</option><option value="8">8</option><option value="8.25">8.25</option><option value="8.5">8.5</option><option value="8.75">8.75</option><option value="9">9</option><option value="9.25">9.25</option><option value="9.5">9.5</option><option value="9.75">9.75</option><option value="10">10</option><option value="10.25" data-large="1">10.25</option><option value="10.5" data-large="1">10.5</option><option value="10.75" data-large="1">10.75</option><option value="11" data-large="1">11</option><option value="11.25" data-large="1">11.25</option><option value="11.5" data-large="1">11.5</option><option value="11.75" data-large="1">11.75</option><option value="12" data-large="1">12</option><option value="12.25" data-large="1">12.25</option><option value="12.5" data-large="1">12.5</option><option value="12.75" data-large="1">12.75</option><option value="13" data-large="1">13</option></select>
+  <a class="cart" id="cart" href="https://buy.stripe.com/5kQ8wPeHYdnHgY25owdnW0a">Add to Cart</a>
+  <p class="fit">Not sure of your size? Choose "I don't know yet." And if your ring doesn't fit when it arrives, send it back — we'll make you a new one in the right size.</p>
+  <dl class="details">
+    <div><dt>Diamonds</dt><dd>0.33 ctw round brilliant, F–G color, VS clarity</dd></div>
+    <div><dt>Center stone</dt><dd>3.7 mm, bezel set</dd></div>
+    <div><dt>Side stones</dt><dd>2.7 mm each, bezel set</dd></div>
+    <div><dt>Metals</dt><dd>Platinum · 18k yellow gold · 18k rose gold</dd></div>
+    <div><dt>Sizes</dt><dd>3.5 – 13, in quarter sizes</dd></div>
+    <div><dt>Made</dt><dd>To order, just for you</dd></div>
+  </dl>
+ </div>
+</div>
+<footer>Looking for something one of a kind? <a href="https://build.hegemanandco.com">Design your own ring</a> · <a href="https://build.hegemanandco.com/gallery.html">Browse the gallery</a></footer>
+<script>
+var LSTD="https://buy.stripe.com/5kQ8wPeHYdnHgY25owdnW0a", LLG="https://buy.stripe.com/bJe14n9nEdnH6jo6sAdnW0b";
+function pick(t){document.getElementById('hero').src=t.src;document.querySelectorAll('.thumbs img').forEach(i=>i.classList.remove('on'));t.classList.add('on');}
+function metal(b,src){document.querySelectorAll('.metals button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+ document.querySelectorAll('.thumbs img').forEach(i=>{if(i.src===src){pick(i)}});}
+function sizeChange(s){var o=s.options[s.selectedIndex];var large=o&&o.dataset&&o.dataset.large;
+ document.querySelector('.price').classList.toggle('large',!!large);
+ document.getElementById('pnote').innerHTML=large?"Sizes above 10 are $2,900":"&nbsp;";
+ document.getElementById('cart').href=large?LLG:LSTD;}
+</script></body></html>
