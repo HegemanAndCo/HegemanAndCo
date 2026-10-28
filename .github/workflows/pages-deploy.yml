@@ -26,8 +26,14 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout
+      - name: Checkout (skip ASSETS - the multi-GB .glb folder isn't needed on Pages)
         uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            /*
+            !/ASSETS/
+          sparse-checkout-cone-mode: false
+          filter: blob:none
 
       - name: Remove ASSETS from the Pages copy (kept in git, served by githack)
         run: rm -rf ASSETS
